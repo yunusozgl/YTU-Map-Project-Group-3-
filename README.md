@@ -1,85 +1,76 @@
-# ytumap
+ytumap
+An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
-Yıldız Teknik Üniversitesi için hazırlanmış kampüs içi harita projesidir. Projede fakülteler, kafeler, ATM'ler, banklar, çöp kovaları, otobüs durakları ve benzeri kampüs noktaları kategori ve koordinat bilgileriyle tutulur.
+The database side is built with SQLite, while the web frontend utilizes React, Leaflet, and a minimal Express API.
 
-Veri tarafı SQLite ile hazırlanmıştır. Web tarafında React, Leaflet ve küçük bir Express API kullanılır.
+Tech Stack
+SQLite
 
-## Kullanılan Teknolojiler
+Python
 
-- SQLite
-- Python
-- Pandas
-- OpenPyXL
-- React
-- Vite
-- Leaflet
-- Express
+Pandas
 
-## Veritabanı Yapısı
+OpenPyXL
 
-Ana tablolar:
+React
 
-- **Kategoriler**: kategori adlarını tutar
-- **Mekanlar**: mekan adı, açıklama ve kategori bilgisini tutar
-- **Konumlar**: mekanların enlem ve boylam bilgisini tutar
+Vite
 
-İlişkiler:
+Leaflet
 
-- Bir kategoride birden fazla mekan bulunabilir
-- Bir mekanın bir koordinat kaydı vardır
+Express
 
-View'lar:
+Database Structure
+Main tables:
 
-- **vw_harita_verisi**: mekan, kategori ve koordinat bilgilerini harita için birleştirir
-- **vw_kategori_listesi**: filtre menüsü için kategori listesini verir
+Kategoriler (Categories): Stores category names.
 
-## Çalıştırma
+Mekanlar (Places): Stores place name, description, and category information.
 
-Bağımlılıkları kurmak için:
+Konumlar (Locations): Stores the latitude and longitude details of the places.
 
-```bash
+Relationships:
+
+A category can contain multiple places.
+
+A place has exactly one coordinate record.
+
+Views:
+
+vw_harita_verisi: Combines place, category, and coordinate data for the map.
+
+vw_kategori_listesi: Provides the list of categories for the filter menu.
+
+Getting Started
+To install the dependencies:
+
+Bash
 npm install
-```
+To start the development server:
 
-Geliştirme sunucusunu başlatmak için:
-
-```bash
+Bash
 npm run dev
-```
+Application URL:
 
-Uygulama adresi:
-
-```text
 http://localhost:5173
-```
+API URL:
 
-API adresi:
-
-```text
 http://localhost:4174/api
-```
+To create a production build:
 
-Production build almak için:
-
-```bash
+Bash
 npm run build
-```
+To run the application via Express after building:
 
-Build sonrası uygulamayı Express üzerinden çalıştırmak için:
-
-```bash
+Bash
 npm run preview
-```
-
-## Örnek Sorgu
-
-```sql
+Sample Query
+SQL
 SELECT m.isim, m.aciklama, k.kategori_adi, ko.enlem, ko.boylam
 FROM Mekanlar m
 JOIN Kategoriler k ON m.kategori_id = k.kategori_id
 JOIN Konumlar ko ON m.mekan_id = ko.mekan_id;
-```
+Note: SQL table and column names have been kept in their original Turkish form to match your database schema.
 
-## Not
-
-Yeni koordinatlar `ytu_map.db` içine eklendiğinde API aynı view'ları okuduğu için harita verisi de güncellenir. Uygulama açıkken sol paneldeki yenile butonu ile güncel kayıtlar tekrar alınabilir.
+Note
+When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views. You can fetch the latest records while the app is running by clicking the refresh button on the left panel.
