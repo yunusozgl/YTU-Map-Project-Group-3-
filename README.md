@@ -1,4 +1,4 @@
-# YTUMAP
+# YTU-MAP-Project-Group-3-
 
 An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
