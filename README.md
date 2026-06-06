@@ -47,10 +47,13 @@ The database side is built with SQLite, while the web frontend utilizes React, L
 
 ## Getting Started
 
+To install the dependencies:
+```bash
+npm install
+
 To start the development server:
 
 npm run dev
-
 Application URL: http://localhost:5173
 
 API URL: http://localhost:4174/api
@@ -61,9 +64,7 @@ npm run build
 To run the application via Express after building:
 
 npm run preview
-
 Sample Query
-
 SQL
 SELECT m.isim, m.aciklama, k.kategori_adi, ko.enlem, ko.boylam
 FROM Mekanlar m
@@ -73,6 +74,3 @@ Note: SQL table and column names have been kept in their original Turkish form t
 
 Note
 When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views. You can fetch the latest records while the app is running by clicking the refresh button on the left panel.
-To install the dependencies:
-```bash
-npm install
