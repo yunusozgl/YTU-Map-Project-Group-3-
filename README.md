@@ -1,61 +1,60 @@
-ytumap
+# ytumap
+
 An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
 The database side is built with SQLite, while the web frontend utilizes React, Leaflet, and a minimal Express API.
 
-Tech Stack
-SQLite
+---
 
-Python
+## Features
 
-Pandas
+* Interactive Map: View faculties, cafes, ATMs, and other campus spots using Leaflet.
+* Category Filtering: Easily filter locations by their categories.
+* Real-time Updates: Refresh map data instantly with the sidebar refresh button.
+* Dynamic Database: Automated updates via SQLite views (vw_harita_verisi).
 
-OpenPyXL
+---
 
-React
+## Tech Stack
 
-Vite
+* SQLite
+* Python
+* Pandas
+* OpenPyXL
+* React
+* Vite
+* Leaflet
+* Express
 
-Leaflet
+---
 
-Express
+## Database Structure
 
-Database Structure
-Main tables:
+### Main tables:
+* Kategoriler (Categories): Stores category names.
+* Mekanlar (Places): Stores place name, description, and category information.
+* Konumlar (Locations): Stores the latitude and longitude details of the places.
 
-Kategoriler (Categories): Stores category names.
+### Relationships:
+* A category can contain multiple places.
+* A place has exactly one coordinate record.
 
-Mekanlar (Places): Stores place name, description, and category information.
+### Views:
+* vw_harita_verisi: Combines place, category, and coordinate data for the map.
+* vw_kategori_listesi: Provides the list of categories for the filter menu.
 
-Konumlar (Locations): Stores the latitude and longitude details of the places.
+---
 
-Relationships:
+## Getting Started
 
-A category can contain multiple places.
-
-A place has exactly one coordinate record.
-
-Views:
-
-vw_harita_verisi: Combines place, category, and coordinate data for the map.
-
-vw_kategori_listesi: Provides the list of categories for the filter menu.
-
-Getting Started
-To install the dependencies:
-
-Bash
-npm install
 To start the development server:
 
 Bash
 npm run dev
-Application URL:
+Application URL: http://localhost:5173
 
-http://localhost:5173
-API URL:
+API URL: http://localhost:4174/api
 
-http://localhost:4174/api
 To create a production build:
 
 Bash
@@ -74,3 +73,6 @@ Note: SQL table and column names have been kept in their original Turkish form t
 
 Note
 When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views. You can fetch the latest records while the app is running by clicking the refresh button on the left panel.
+To install the dependencies:
+```bash
+npm install
