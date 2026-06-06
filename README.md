@@ -85,7 +85,4 @@ FROM Mekanlar m
 JOIN Kategoriler k ON m.kategori_id = k.kategori_id
 JOIN Konumlar ko ON m.mekan_id = ko.mekan_id;
 
-Note: SQL table and column names have been kept in their original Turkish form to match your database schema.
-
-Note
-When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views. You can fetch the latest records while the app is running by clicking the refresh button on the left panel.
+Note: When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views.
