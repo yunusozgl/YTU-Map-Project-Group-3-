@@ -49,21 +49,21 @@ The database side is built with SQLite, while the web frontend utilizes React, L
 
 To start the development server:
 
-Bash
 npm run dev
+
 Application URL: http://localhost:5173
 
 API URL: http://localhost:4174/api
 
 To create a production build:
 
-Bash
 npm run build
 To run the application via Express after building:
 
-Bash
 npm run preview
+
 Sample Query
+
 SQL
 SELECT m.isim, m.aciklama, k.kategori_adi, ko.enlem, ko.boylam
 FROM Mekanlar m
