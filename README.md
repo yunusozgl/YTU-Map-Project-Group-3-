@@ -1,8 +1,18 @@
-# ytumap
+# YTUMAP
 
 An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
 The database side is built with SQLite, while the web frontend utilizes React, Leaflet, and a minimal Express API.
+
+---
+
+## Team Members
+
+* Ahmet Tuğrul Aki : 22058011
+* Muhammet AL: 22058607
+* Ömer Özyurt: 20058060
+* Salih Çelik: 21058011
+* Yunus Özgül: 21058062
 
 ---
 
