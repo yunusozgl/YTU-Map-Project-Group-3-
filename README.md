@@ -54,6 +54,7 @@ npm install
 To start the development server:
 
 npm run dev
+
 Application URL: http://localhost:5173
 
 API URL: http://localhost:4174/api
@@ -61,15 +62,19 @@ API URL: http://localhost:4174/api
 To create a production build:
 
 npm run build
+
 To run the application via Express after building:
 
 npm run preview
+
 Sample Query
+
 SQL
 SELECT m.isim, m.aciklama, k.kategori_adi, ko.enlem, ko.boylam
 FROM Mekanlar m
 JOIN Kategoriler k ON m.kategori_id = k.kategori_id
 JOIN Konumlar ko ON m.mekan_id = ko.mekan_id;
+
 Note: SQL table and column names have been kept in their original Turkish form to match your database schema.
 
 Note
