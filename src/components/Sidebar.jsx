@@ -74,7 +74,7 @@ export default function Sidebar({
           <MapPin size={22} />
         </span>
         <span>
-          <h1>ytumap</h1>
+          <h1>YTUMAP</h1>
           <p>Yıldız Teknik Üniversitesi</p>
         </span>
       </header>
@@ -83,12 +83,12 @@ export default function Sidebar({
         <div>
           <Database size={17} />
           <strong>{stats?.totalPlaces ?? places.length}</strong>
-          <span>konum</span>
+          <span>Konum</span>
         </div>
         <div>
           <Layers size={17} />
           <strong>{stats?.totalCategories ?? categories.length}</strong>
-          <span>kategori</span>
+          <span>Kategori</span>
         </div>
       </section>
 

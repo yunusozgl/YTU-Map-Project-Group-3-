@@ -40,7 +40,7 @@ export default function CampusMap({ places, selectedPlace, onSelectPlace }) {
   }, [places]);
 
   return (
-    <MapContainer center={center} zoom={16} minZoom={14} maxZoom={20} zoomControl={false}>
+    <MapContainer center={center} zoom={16} minZoom={15} maxZoom={18} zoomControl={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
