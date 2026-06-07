@@ -11,12 +11,10 @@ except Exception as e:
     print(f"HATA: Excel dosyası okunamadı. Detay: {e}")
     sys.exit()
 
-# Sütun isimlerini temizle
 df.columns = df.columns.str.strip().str.lower()
 
 print("2. Bulunan Sütunlar:", df.columns.tolist())
 
-# Güvenlik kontrolü
 if 'kategori' not in df.columns:
     print("\nKRİTİK HATA: Sütun isimleri temizlenmesine rağmen 'kategori' bulunamadı.")
     sys.exit()
@@ -25,7 +23,6 @@ print("3. Veritabanı oluşturuluyor...")
 conn = sqlite3.connect('ytu_map.db')
 cursor = conn.cursor()
 
-# Tabloları oluştur
 cursor.executescript('''
 CREATE TABLE IF NOT EXISTS Kategoriler (
     kategori_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -49,13 +46,11 @@ CREATE TABLE IF NOT EXISTS Konumlar (
 );
 ''')
 
-# Eski view'lar varsa silip yeniden oluştur
 cursor.executescript('''
 DROP VIEW IF EXISTS vw_harita_verisi;
 DROP VIEW IF EXISTS vw_kategori_listesi;
 ''')
 
-# View'ları oluştur
 cursor.executescript('''
 CREATE VIEW vw_harita_verisi AS
 SELECT
@@ -121,21 +116,18 @@ conn.commit()
 
 print("\n5. View testleri yapılıyor...")
 
-# Kategori listesini göster
 cursor.execute("SELECT * FROM vw_kategori_listesi")
 kategoriler_listesi = cursor.fetchall()
 print("\nKategori Listesi:")
 for kategori in kategoriler_listesi:
     print(kategori[0])
 
-# Tüm harita verisini göster
 cursor.execute("SELECT * FROM vw_harita_verisi LIMIT 5")
 ornek_veriler = cursor.fetchall()
 print("\nHarita verisinden örnek 5 kayıt:")
 for veri in ornek_veriler:
     print(veri)
 
-# Kullanıcıdan kategori seçip filtreleme örneği
 secilen_kategori = input("\nBir kategori girin (veya hepsi için boş bırakın): ").strip()
 
 if secilen_kategori == "":
@@ -153,5 +145,3 @@ for veri in filtreli_veriler[:10]:
     print(veri)
 
 conn.close()
-
-print("\nTEBRİKLER! Veritabanı, tablolar ve view'lar başarıyla oluşturuldu.")
