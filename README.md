@@ -1,6 +1,6 @@
 # YTU-MAP-Project-Group-3-
 
-🔗 **[Repository Link](Buraya_Repository_Linkini_Ekle)** | 📽️ **[Presentation Link](https://drive.google.com/file/d/1GV71pccpn4U7_tCPkrsy0X3UO66oaUFT/view?usp=drivesdk)**
+🔗 **[Repository Link](https://github.com/yunusozgl/YTU-Map-Project-Group-3-)** | 📽️ **[Presentation Link](https://drive.google.com/file/d/1GV71pccpn4U7_tCPkrsy0X3UO66oaUFT/view?usp=drivesdk)**
 
 An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
