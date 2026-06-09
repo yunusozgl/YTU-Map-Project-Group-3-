@@ -1,5 +1,7 @@
 # YTU-MAP-Project-Group-3-
 
+🔗 **[Repository Link](Buraya_Repository_Linkini_Ekle)** | 📽️ **https://drive.google.com/file/d/1GV71pccpn4U7_tCPkrsy0X3UO66oaUFT/view?usp=drivesdk**
+
 An on-campus map project designed for Yıldız Technical University. The project stores campus locations such as faculties, cafes, ATMs, benches, trash bins, bus stops, and more, along with their category and coordinate information.
 
 The database side is built with SQLite, while the web frontend utilizes React, Leaflet, and a minimal Express API.
@@ -60,29 +62,3 @@ The database side is built with SQLite, while the web frontend utilizes React, L
 To install the dependencies:
 ```bash
 npm install
-
-To start the development server:
-
-npm run dev
-
-Application URL: http://localhost:5173
-
-API URL: http://localhost:4174/api
-
-To create a production build:
-
-npm run build
-
-To run the application via Express after building:
-
-npm run preview
-
-Sample Query
-
-SQL
-SELECT m.isim, m.aciklama, k.kategori_adi, ko.enlem, ko.boylam
-FROM Mekanlar m
-JOIN Kategoriler k ON m.kategori_id = k.kategori_id
-JOIN Konumlar ko ON m.mekan_id = ko.mekan_id;
-
-Note: When new coordinates are added to ytu_map.db, the map data updates automatically since the API reads from the same views.
